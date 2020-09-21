@@ -13,6 +13,7 @@ import torch.optim as optim
 from tensorboardX import SummaryWriter
 
 # default `log_dir` is "runs" - we'll be more specific here
+# 定义一个SummaryWriter() 实例，默认目录为生成runs文件夹目录
 writer = SummaryWriter('runs/fashion_mnist_experiment_1')
 
 # transforms
@@ -148,6 +149,8 @@ for epoch in range(1):  # loop over the dataset multiple times
         if i % 1000 == 999:    # every 1000 mini-batches...
 
             # ...log the running loss
+            # 将我们所需要的数据保存在文件里面供可视化使用。 这里是Scalar类型，所以使用writer.add_scalar()，
+            # 其他的队形使用对应的函数。第一个参数可以简单理解为保存图的名称，第二个参数是可以理解为Y轴数据，第三个参数可以理解为X轴数据。
             writer.add_scalar('training loss',
                             running_loss / 1000,
                             epoch * len(trainloader) + i)

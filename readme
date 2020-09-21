@@ -1,0 +1,14 @@
+这是一个TensorBoard的简单实现，采用的是FashionMnist数据集，主要是把数据和模型可视化到TensorBoard上
+
+代码没有太多注释，如果有需要用到才会考虑
+
+参考链接：
+1.Pytorch使用tensorboardX可视化教程：https://www.jianshu.com/p/46eb3004beca
+2.详解PyTorch项目使用TensorboardX进行训练可视化：https://blog.csdn.net/bigbennyguo/article/details/87956434
+3.解决pytorch加载mnist数据集失败方法：https://blog.csdn.net/qq_35896136/article/details/104325900
+4.pytorch 60分钟教程：https://pytorch.apachecn.org/docs/1.4/6.html
+
+关键问题：
+本地加载FashionMnist数据集的时候和CIFAR10不太一样，分两步修改D:\anaconda3\Lib\site-packages\torchvision\datasets\mnist.py
+1.修改FashionMnist类中的resources路径为本地数据集路径，必须为压缩包
+2.删除父类mnist中的download_and_extract_archive函数中md5=md5（原因未知）

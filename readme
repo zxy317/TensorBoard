@@ -1,5 +1,5 @@
-这是一个TensorBoard的简单实现，采用的是FashionMnist数据集，主要是把数据和模型可视化到TensorBoard上
-
+这是一个TensorBoard的简单实现，采用的是FashionMnist数据集，主要是把数据和模型可视化到TensorBoardX上
+X
 代码没有太多注释，如果有需要用到才会考虑
 
 参考链接：
